@@ -99,96 +99,27 @@
               <table class="table">
                 <thead>
                   <tr>
-                    <th>
-                      Assignee
-                    </th>
-                    <th>
-                      Subject
-                    </th>
-                    <th>
-                      Status
-                    </th>
-                    <th>
-                      Last Update
-                    </th>
-                    <th>
-                      Tracking ID
-                    </th>
+                    <th>Assignee</th>
+                    <th>Subject</th>
+                    <th>Status</th>
+                    <th>Last Update</th>
+                    <th>Tracking ID</th>
                   </tr>
                 </thead>
                 <tbody>
+                  {volist name="data" id="item"}
                   <tr>
                     <td>
-                      <img src="__STATIC__/images/faces/face1.jpg" class="mr-2" alt="image">
-                      David Grey
+                      <img src=__STATIC__/{$item.userpic} class="mr-2" alt="image">
+                      {$item.username}
                     </td>
-                    <td>
-                      Fund is not recieved
+                    <td>{$item.text}</td>
+                    <td><label class="badge badge-gradient-success">DONE</label>
                     </td>
-                    <td>
-                      <label class="badge badge-gradient-success">DONE</label>
-                    </td>
-                    <td>
-                      Dec 5, 2017
-                    </td>
-                    <td>
-                      WD-12345
-                    </td>
+                    <td>{$item.update_at}</td>
+                    <td>{$item.tracking_id}</td>
                   </tr>
-                  <tr>
-                    <td>
-                      <img src="__STATIC__/images/faces/face2.jpg" class="mr-2" alt="image">
-                      Stella Johnson
-                    </td>
-                    <td>
-                      High loading time
-                    </td>
-                    <td>
-                      <label class="badge badge-gradient-warning">PROGRESS</label>
-                    </td>
-                    <td>
-                      Dec 12, 2017
-                    </td>
-                    <td>
-                      WD-12346
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="__STATIC__/images/faces/face3.jpg" class="mr-2" alt="image">
-                      Marina Michel
-                    </td>
-                    <td>
-                      Website down for one week
-                    </td>
-                    <td>
-                      <label class="badge badge-gradient-info">ON HOLD</label>
-                    </td>
-                    <td>
-                      Dec 16, 2017
-                    </td>
-                    <td>
-                      WD-12347
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="__STATIC__/images/faces/face4.jpg" class="mr-2" alt="image">
-                      John Doe
-                    </td>
-                    <td>
-                      Loosing control on server
-                    </td>
-                    <td>
-                      <label class="badge badge-gradient-danger">REJECTED</label>
-                    </td>
-                    <td>
-                      Dec 3, 2017
-                    </td>
-                    <td>
-                      WD-12348
-                    </td>
-                  </tr>
+                  {/volist}
                 </tbody>
               </table>
             </div>
